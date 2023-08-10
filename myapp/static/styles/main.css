@@ -1,0 +1,50 @@
+body {
+    background: black;
+    color:white;
+    font-family: 'Handjet', cursive;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.navbar{
+    background: #404040;
+
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+}
+
+.navbar ul li {
+    list-style: none;
+
+}
+.navbar ul li a{
+    color:white;
+    text-decoration: none;  
+}
+
+.navbar ul li a:hover{
+    color:antiquewhite
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 10px;
+}
+
+.card {
+    background: whitesmoke;
+    color: black;
+    padding: 10px;
+    margin-bottom: 2px;
+}
+
+.input {
+    background: wheat;
+    padding: 10px;
+    text-align: center;
+    display: block;
+}

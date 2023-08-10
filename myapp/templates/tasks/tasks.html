@@ -1,0 +1,30 @@
+{% extends 'layout/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Tasks</h1> 
+    {% for task in tasks %}
+    <h3>{% if task.done == False %} ⌚ {% else %}✅{% endif %}{{task.title}}</h3>
+    <p>{{task.description}}</p>
+    <p>Project:{{task.project}}</p>
+    
+    <p>Tarea pendiente </p>
+    <form method='post' action="{% url 'task_update' task.id %}">
+        {% csrf_token %}
+        <button type='submit' name='done'>Done ✔</button>
+    </form>
+    <form method='post' action="{% url 'task_delete' task.id %}">
+        {% csrf_token %}
+        <button type='submit'>Delete</button>
+    </form>
+    
+    {% endfor %}
+    {% endblock content %}
+</body>
+</html>
